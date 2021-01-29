@@ -1,12 +1,10 @@
 <template>
   <div id="header" class="ui secondary menu">
     <div class="header-logo">
-      <a href="/" class="item">
-        <img class="logo" src="../assets/waifu_logo.svg" alt="Site logo" />
+      <a href="/" class="item logo-link">
+        <img class="logo" src="../assets/waifu_logob.svg" alt="Site logo" />
       </a>
     </div>
-    <a href="/messages" class="item">Messages</a>
-    <a href="/friends" class="item">Friends</a>
     <div class="right menu rightmen">
       <div class="item">
         <div class="ui icon input">
@@ -14,7 +12,15 @@
           <i class="search link icon"></i>
         </div>
       </div>
-      <a href="/logout" class="ui item">Logout</a>
+      <a href="/gallery" class="ui item header-text" v-if="isLoggedIn"
+        >Gallery</a
+      >
+      <a href="/upload" class="ui item header-text" v-if="isLoggedIn">Upload</a>
+      <a href="/login" class="ui item header-text" v-if="!isLoggedIn">Log In</a>
+      <a href="/signup" class="ui item header-text" v-if="!isLoggedIn"
+        >Sign Up</a
+      >
+      <a href="/logout" class="ui item header-text" v-if="isLoggedIn">Logout</a>
     </div>
   </div>
 </template>
@@ -22,18 +28,28 @@
 <script>
 export default {
   name: "Header",
+  data() {
+    return {
+      isLoggedIn: false,
+    };
+  },
   components: {},
 };
 </script>
 
 <style scoped>
+#header {
+  font-size: 1.25rem;
+  background-color: rgb(243, 117, 117);
+}
 .header-logo {
   margin-left: 2em;
+  height: 8rem;
 }
-.logo {
-  height: 8em;
-  margin: 2em 2em;
-  text-decoration: none;
+/* Need to fix this so logo doesn't shadow on hover */
+.header-logo > a:hover {
+  background: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0);
 }
 .rightmen {
   padding-right: 2em;
