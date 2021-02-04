@@ -16,7 +16,9 @@
         >Gallery</a
       >
       <a href="/upload" class="ui item header-text" v-if="isLoggedIn">Upload</a>
-      <a href="/login" class="ui item header-text" v-if="!isLoggedIn">Log In</a>
+      <a href="#" class="ui item header-text" @click="login" v-if="!isLoggedIn"
+        >Log In</a
+      >
       <a href="/signup" class="ui item header-text" v-if="!isLoggedIn"
         >Sign Up</a
       >
@@ -26,12 +28,17 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "Header",
   data() {
     return {
       isLoggedIn: false,
     };
+  },
+  methods: {
+    ...mapActions(["login"]),
   },
   components: {},
 };
