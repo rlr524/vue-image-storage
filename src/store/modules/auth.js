@@ -1,4 +1,5 @@
 import api from "../../api/imgur";
+import qs from "qs";
 
 // This is initial state
 const state = {
@@ -21,6 +22,10 @@ const actions = {
 	logout: ({ commit }) => {
 		// Committing the setToken mutation and because we are logging the user out, we're passing in the value back to the token of null
 		commit("setToken", null);
+	},
+	finalizeLogin: ({ commit }, hash) => {
+		const parsedHash = qs.parse(hash.replace("#", ""));
+		commit("setToken", parsedHash.access_token);
 	},
 };
 

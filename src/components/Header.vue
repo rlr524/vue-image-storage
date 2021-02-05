@@ -5,6 +5,7 @@
         <img class="logo" src="../assets/waifu_logob.svg" alt="Site logo" />
       </a>
     </div>
+    {{ isLoggedIn }}
     <div class="right menu rightmen">
       <div class="item">
         <div class="ui icon input">
@@ -25,14 +26,15 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Header",
   data() {
-    return {
-      isLoggedIn: false,
-    };
+    return {};
+  },
+  computed: {
+    ...mapGetters(["isLoggedIn"]),
   },
   methods: {
     ...mapActions(["login"]),
