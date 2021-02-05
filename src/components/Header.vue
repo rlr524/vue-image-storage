@@ -19,9 +19,6 @@
       <a href="#" class="ui item header-text" @click="login" v-if="!isLoggedIn"
         >Log In</a
       >
-      <a href="/signup" class="ui item header-text" v-if="!isLoggedIn"
-        >Sign Up</a
-      >
       <a href="/logout" class="ui item header-text" v-if="isLoggedIn">Logout</a>
     </div>
   </div>
