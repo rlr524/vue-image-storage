@@ -5,7 +5,6 @@
         <img class="logo" src="../assets/waifu_logob.svg" alt="Site logo" />
       </a>
     </div>
-    {{ isLoggedIn }}
     <div class="right menu rightmen">
       <div class="item">
         <div class="ui icon input">
@@ -13,14 +12,12 @@
           <i class="search link icon"></i>
         </div>
       </div>
-      <a href="/gallery" class="ui item header-text" v-if="isLoggedIn"
-        >Gallery</a
-      >
-      <a href="/upload" class="ui item header-text" v-if="isLoggedIn">Upload</a>
-      <a href="#" class="ui item header-text" @click="login" v-if="!isLoggedIn"
-        >Log In</a
-      >
-      <a href="/logout" class="ui item header-text" v-if="isLoggedIn">Logout</a>
+      <div class="horizontal" v-if="isLoggedIn">
+        <a href="#" class="ui item header-text">Gallery</a>
+        <a href="#" class="ui item header-text">Upload</a>
+        <a class="ui item header-text" @click="logout">Logout</a>
+      </div>
+      <a href="#" class="ui item header-text" @click="login" v-else>Log In</a>
     </div>
   </div>
 </template>
@@ -37,7 +34,7 @@ export default {
     ...mapGetters(["isLoggedIn"]),
   },
   methods: {
-    ...mapActions(["login"]),
+    ...mapActions(["login", "logout"]),
   },
   components: {},
 };
@@ -52,12 +49,16 @@ export default {
   margin-left: 2em;
   height: 8rem;
 }
-/* Need to fix this so logo doesn't shadow on hover */
+/*TODO: Need to fix this so logo doesn't shadow on hover */
 .header-logo > a:hover {
   background: rgba(0, 0, 0, 0);
   color: rgba(0, 0, 0, 0);
 }
 .rightmen {
   padding-right: 2em;
+}
+.horizontal {
+  display: flex;
+  flex-direction: row;
 }
 </style>
