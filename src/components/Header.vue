@@ -1,9 +1,9 @@
 <template>
   <div id="header" class="ui secondary menu">
     <div class="header-logo">
-      <a href="/" class="item logo-link">
+      <router-link to="/" class="item header-logo">
         <img class="logo" src="../assets/waifu_logob.svg" alt="Site logo" />
-      </a>
+      </router-link>
     </div>
     <div class="right menu rightmen">
       <div class="item">
@@ -13,8 +13,12 @@
         </div>
       </div>
       <div class="horizontal" v-if="isLoggedIn">
-        <a href="#" class="ui item header-text">Gallery</a>
-        <a href="#" class="ui item header-text">Upload</a>
+        <router-link to="gallery" class="ui item header-text"
+          >Gallery</router-link
+        >
+        <router-link to="upload" class="ui item header-text"
+          >Upload</router-link
+        >
         <a class="ui item header-text" @click="logout">Logout</a>
       </div>
       <a href="#" class="ui item header-text" @click="login" v-else>Log In</a>

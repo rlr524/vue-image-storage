@@ -3,14 +3,25 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import AuthHandler from "../components/AuthHandler.vue";
 import Error from "../components/Error.vue";
+import ImageList from "../components/ImageList.vue";
+import UploadForm from "../components/UploadForm.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
 	{
 		path: "/",
-		name: "home",
 		component: Home,
+	},
+	{
+		path: "/gallery",
+		name: "gallery",
+		component: ImageList,
+	},
+	{
+		path: "/upload",
+		name: "upload",
+		component: UploadForm,
 	},
 	{
 		path: "/oauth2/callback",
