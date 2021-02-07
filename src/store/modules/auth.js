@@ -1,5 +1,6 @@
 import api from "../../api/imgur";
 import qs from "qs";
+import router from "../../router";
 
 // This is initial state
 const state = {
@@ -31,6 +32,7 @@ const actions = {
 		const parsedHash = qs.parse(hash.replace("#", ""));
 		commit("setToken", parsedHash.access_token);
 		window.localStorage.setItem("imgur_token", parsedHash.access_token);
+		router.push("/");
 	},
 };
 
