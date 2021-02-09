@@ -15,10 +15,10 @@ const getters = {
 // which is ideal in this case because we want to be able to pass the token we access in our auth module to our
 // fetchImages method
 const actions = {
-	useImages: async ({ rootState }) => {
+	useImages: async ({ rootState, commit }) => {
 		const { token } = rootState.auth;
 		const response = await api.fetchImages(token);
-		console.log(response);
+		commit("setImages", response.data.data);
 	},
 };
 

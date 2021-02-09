@@ -16,7 +16,7 @@ export default {
 		)}`;
 	},
 	fetchImages(token) {
-		return axios.get(`${ROOT_URL}/3/account/me/image/`, {
+		return axios.get(`${ROOT_URL}/3/account/me/images`, {
 			headers: {
 				"content-type": "application/json",
 				Authorization: `Bearer ${token}`,
@@ -24,3 +24,6 @@ export default {
 		});
 	},
 };
+
+// Note: There was an issue with the current imgur api in which it was refusing localhost. The fix was to use the network address
+// 192.168.86.250:8080 instead of localhost and also provide that same ip as the callback on the imgur app registration
