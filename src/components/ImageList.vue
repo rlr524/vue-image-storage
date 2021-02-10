@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="image-list">
     <p>The current number of images is: {{ getImages.length }}</p>
     <img
       v-for="image in getImages"

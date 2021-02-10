@@ -17,8 +17,8 @@
           >Gallery</router-link
         >
         <router-link to="upload" class="ui item header-text"
-          >Upload</router-link
-        >
+          >Upload
+        </router-link>
         <a class="ui item header-text" @click="logout">Logout</a>
       </div>
       <a href="#" class="ui item header-text" @click="login" v-else>Log In</a>
@@ -28,6 +28,7 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
+//TODO: Make the upload form into a modal
 
 export default {
   name: "Header",
@@ -46,6 +47,7 @@ export default {
 
 <style scoped>
 #header {
+  font-family: "Roboto", sans-serif;
   font-size: 1.25rem;
   background-color: rgb(243, 117, 117);
 }

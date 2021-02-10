@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <app-header></app-header>
-    <router-view></router-view>
+    <div class="ui container">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -18,4 +20,7 @@ export default {
 
 
 <style>
+#app {
+  font-family: "Roboto", sans-serif;
+}
 </style>

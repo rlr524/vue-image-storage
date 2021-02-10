@@ -20,6 +20,9 @@ const actions = {
 		const response = await api.fetchImages(token);
 		commit("setImages", response.data.data);
 	},
+	uploadImages: ({ commit }, images) => {
+		console.log(images);
+	},
 };
 
 const mutations = {

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="auth-handler">
     <span>Please wait...</span>
   </div>
 </template>
