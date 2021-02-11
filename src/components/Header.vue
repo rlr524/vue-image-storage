@@ -28,7 +28,10 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-//TODO: Make the upload form into a modal
+
+/**
+ * @todo Make the upload form into a modal
+ */
 
 export default {
   name: "Header",

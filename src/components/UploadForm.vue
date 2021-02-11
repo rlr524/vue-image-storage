@@ -1,7 +1,17 @@
 <template>
   <div id="upload-form">
     <div class="dropper">
-      <input type="file" @change="uploadImages" name="" id="" />
+      <!-- With ($event.target.files) we're telling vue that we want to reference the actual DOM event we're calling here 
+      with uploadImages and grab the target.files property from what the event returns. We use the $ to ensure we're 
+      referring to the actual event object, not just some variable named "event" -->
+      <input
+        type="file"
+        @change="uploadImages($event.target.files)"
+        multiple
+        accept="image/*"
+        name=""
+        id=""
+      />
       <span>Drag file(s) here or click on this area to upload</span>
     </div>
   </div>
