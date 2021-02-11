@@ -29,9 +29,7 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 
-/**
- * @todo Make the upload form into a modal
- */
+//TODO Make the upload form into a modal
 
 export default {
   name: "Header",
@@ -58,7 +56,7 @@ export default {
   margin-left: 2em;
   height: 8rem;
 }
-/*TODO: Need to fix this so logo doesn't shadow on hover */
+/*FIXME: Need to fix this so logo doesn't shadow on hover */
 .header-logo > a:hover {
   background: rgba(0, 0, 0, 0);
   color: rgba(0, 0, 0, 0);

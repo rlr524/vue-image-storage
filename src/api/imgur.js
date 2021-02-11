@@ -61,6 +61,9 @@ export default {
 		return Promise.all(promises);
 	},
 };
+
+// TODO Add a function to access account favorites and display on a new component with a "Favorites" button in the Nav
+
 /**
  * @description
  * There was an issue with the current imgur api in which it was refusing localhost. The fix was to use the network address

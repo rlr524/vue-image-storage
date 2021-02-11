@@ -1,17 +1,11 @@
 <template>
-  <div id="image-list">
-    <p>The current number of images is: {{ getImages.length }}</p>
+  <div id="image-list" class="image-container">
     <img
       v-for="image in getImages"
       :key="image.id"
       :src="image.link"
       alt="An image"
     />
-    <ul>
-      <li v-for="image in getImages" :key="image.id">
-        {{ image.id }} - {{ image.description }}
-      </li>
-    </ul>
   </div>
 </template>
 
@@ -33,4 +27,12 @@ export default {
 </script>
 
 <style scoped>
+.image-container {
+  column-count: 3;
+  column-gap: 0;
+}
+img {
+  max-width: 100%;
+  padding: 5px;
+}
 </style>
